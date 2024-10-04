@@ -1,7 +1,9 @@
-Netflic GPT App
+# Netflic GPT App
 
 - Create React App
 - Configure tailwindCSS
+- Header
+- Login Form
 
 # Features
 

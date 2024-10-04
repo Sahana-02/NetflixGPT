@@ -1,7 +1,12 @@
-import './App.css'
+import Body from './components/Body'
+import Browse from './components/Browse'
 
 function App() {
-  return <div className='text-3xl font-bold text-green-500'>Hello</div>
+  return (
+    <div>
+      <Body />
+    </div>
+  )
 }
 
 export default App
