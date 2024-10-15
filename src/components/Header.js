@@ -14,8 +14,11 @@ const Header = () => {
   const handleSignout = () => {
     signOut(auth)
       .then(() => {})
-      .catch((error) => {})
+      .catch((error) => {
+        navigate('/error')
+      })
   }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
