@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import Netflix_logo from '../imgs/Netflix_Logo_PMS.png'
 import Header from './Header'
 import Login_bg from '../imgs/Login_bg.jpg'
 import { checkValidData } from '../utils/validate.js'
@@ -9,16 +8,15 @@ import {
   updateProfile
 } from 'firebase/auth'
 import { auth } from '../utils/firebase.js'
-import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../utils/userSlice.js'
+import { ProfilePhoto } from '../utils/constants.js'
 const Login = () => {
   const [isSignInForm, setSignInForm] = useState(true)
   const [errMsg, setErrMsg] = useState(null)
   const email = useRef(null)
   const password = useRef(null)
   const name = useRef(null)
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   const toggleSignInForm = () => {
     setSignInForm(!isSignInForm)
@@ -37,7 +35,7 @@ const Login = () => {
           const user = userCredential.user
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: 'https://avatars.githubusercontent.com/u/148085700?v=4'
+            photoURL: ProfilePhoto
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = user
@@ -49,7 +47,6 @@ const Login = () => {
                   photoURL: photoURL
                 })
               )
-              navigate('/browse')
             })
             .catch((error) => {
               // An error occurred
@@ -69,7 +66,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user
-          navigate('/browse')
         })
         .catch((error) => {
           const errorCode = error.code
