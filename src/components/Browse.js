@@ -5,16 +5,26 @@ import MainContainer from './MainContainer'
 import SecondaryContainer from './SecondaryContainer'
 import usePopularMovies from '../hooks/usePopularMovies'
 import useUpcomingMovies from '../hooks/useUpcomingMovies'
+import { useSelector } from 'react-redux'
+import GPTSearchPage from './GPTSearchPage'
 
 const Browse = () => {
   useNowPlayingMovies()
   usePopularMovies()
   useUpcomingMovies()
+  const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch)
   return (
-    <div className=' overflow-x-auto no-scrollbar'>
+    <div className=' w-screen overflow-x-auto no-scrollbar'>
       <Header />
-      <MainContainer />
-      <SecondaryContainer />
+      {showGPTSearch ? (
+        <GPTSearchPage />
+      ) : (
+        <>
+          {' '}
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   )
 }

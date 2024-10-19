@@ -27,6 +27,22 @@
 - Fetch data for trailer video
 - Update store with trailer video
 - Embed youtube video
+- Build secondary component
+- Build movie list and movie card
+- TMDB IMG DN URL
+- Use popular movie
+- GPT Search Page
+- GPT Search Bar
+- (BONUS) Multi-language Feature in our App
+- Get Open AI Api Key
+- Gpt Search API Call
+- fetched gptMoviesSuggestions from TMDB
+- created gptSlice added data
+- Resused Movie List component to make movie suggestion container
+- Memoization
+- Added .env file
+- Adding .env file to gitignore
+- Made our Site Responsive
 
 # Features
 
