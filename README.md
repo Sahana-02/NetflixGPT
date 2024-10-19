@@ -57,3 +57,8 @@
 - Netflix GPT
   - Search Bar
   - Movie Suggestions
+
+# Working App Demo
+
+Please use below URL to see the demo of the APP
+https://netflix-gpt-215c8.web.app/
